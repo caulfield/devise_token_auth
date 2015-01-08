@@ -58,7 +58,7 @@ module DeviseTokenAuth
       @resource.assign_attributes(extra_params) if extra_params
 
       # don't send confirmation email!!!
-      @resource.skip_confirmation!
+      @resource.skip_confirmation! if @resource.devise_modules.include?(:confirmable)
 
       sign_in(:user, @resource, store: false, bypass: false)
 
