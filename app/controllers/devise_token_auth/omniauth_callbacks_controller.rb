@@ -90,6 +90,7 @@ module DeviseTokenAuth
       end
     end
 
+    alias failure omniauth_failure
 
     # derive allowed params from the standard devise parameter sanitizer
     def whitelisted_params
